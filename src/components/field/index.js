@@ -347,6 +347,7 @@ export default class TextField extends PureComponent {
       baseColor,
       textColor,
       errorColor,
+      errorFontSize,
       lineWidth,
       activeLineWidth,
       containerStyle,
@@ -430,10 +431,10 @@ export default class TextField extends PureComponent {
       }),
 
       fontSize: title?
-        titleFontSize:
+        errorFontSize:
         focus.interpolate({
           inputRange:  [-1, 0, 1],
-          outputRange: [titleFontSize, 0, 0],
+          outputRange: [errorFontSize, 0, 0],
         }),
     };
 
@@ -518,7 +519,6 @@ export default class TextField extends PureComponent {
 
             <TextInput
               style={[styles.input, inputStyle, inputStyleOverrides]}
-              selectionColor={tintColor}
 
               {...props}
 
